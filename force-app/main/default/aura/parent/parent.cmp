@@ -1,0 +1,12 @@
+<aura:component >
+    
+    <div class="slds-grid slds-grid_pull-padded-medium slds-m-around_medium">
+        <div class="slds-col slds-p-horizontal_medium slds-box slds-m-around_medium">
+            <c:child1 />
+        </div>
+        <div class="slds-col slds-p-horizontal_medium slds-box slds-m-around_medium">
+            <c:child2 />
+        </div>
+    </div>
+    
+</aura:component>

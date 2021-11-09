@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Account List using Apex Wire To Function" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={accounts}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <template for:each={accounts} for:item="acc">
+                            <p key={acc.Id}>{acc.Name}</p>
+                        </template>
+                      </div>
+                </div>
+            </template>
+            <template if:true={error}>
+                {error}
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,10 @@
+<aura:component >
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_3-of-3">
+            <span>1</span>
+        </div>
+        <div class="slds-col slds-size_3-of-3">
+            <span>2</span>
+        </div>
+    </div>
+</aura:component>

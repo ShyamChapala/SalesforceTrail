@@ -1,0 +1,8 @@
+<aura:component>
+    
+	<div class="row">
+        <h2 class="header">Company Information</h2>
+        <lightning:input name="mname" label="Manager Name"/>
+        <lightning:input name="pname" label="Project Name"/>
+    </div> 
+</aura:component>

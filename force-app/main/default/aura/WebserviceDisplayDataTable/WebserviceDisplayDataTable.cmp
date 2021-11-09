@@ -1,0 +1,54 @@
+<aura:component controller="GetRestServiceData">
+    <aura:attribute name="response" type="Object"/>
+    <aura:attribute name="isDataAvailable" type="boolean" default="false"/>
+    
+    <lightning:button variant="brand" class="slds-align_absolute-center slds-m-top_large" label="Make CallOut" onclick="{! c.calloutCtrl }" /><br/>
+    <aura:if isTrue="{!v.isDataAvailable}">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+        <thead>
+            <tr class="slds-text-title--caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Id">ID</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Name">Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Email">Email</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Gender">Gender</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Status">Staus</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.response}" var="con">
+                <tr>
+                    <th scope="row">
+                        <div class="slds-truncate" title="{!con.id}">{!con.id}</div>
+                    </th>
+                    <th scope="row">
+                        <div class="slds-truncate" title="{!con.name}">{!con.name}</div>
+                    </th>
+                    <th scope="row">
+                        <div class="slds-truncate" title="{!con.email}">{!con.email}</div>
+                    </th>
+                    <th scope="row">
+                        <div class="slds-truncate" title="{!con.gender}">{!con.gender}</div>
+                    </th>
+                    <th scope="row">
+                        <div class="slds-truncate" title="{!con.gender}">{!con.status}</div>
+                    </th>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+        <!--<aura:set attribute="else">
+            No Data
+        </aura:set> -->
+    </aura:if> 
+    
+</aura:component>

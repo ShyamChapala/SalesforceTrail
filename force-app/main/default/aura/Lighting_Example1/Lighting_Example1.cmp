@@ -1,0 +1,18 @@
+<aura:component controller="AccountController">
+    
+    <aura:attribute type="Account[]" name="acctList"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.fetchAcc}"/>
+    
+    <lightning:datatable data="{! v.acctList }"
+                         columns="{! v.mycolumns }"
+                         keyField="id"
+                         hideCheckboxColumn="false"/>
+    
+    <!--<aura:iteration items="{!v.acctList}" var="r">
+        {!r.Name}
+        {!r.Phone}
+        <br/>
+    </aura:iteration> -->
+</aura:component>

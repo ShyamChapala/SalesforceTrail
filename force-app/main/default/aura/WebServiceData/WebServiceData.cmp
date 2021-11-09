@@ -1,0 +1,63 @@
+<aura:component controller="GetDataFromWebService" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="response" type="Object" />
+    
+    <aura:attribute name="title" type="String" default="Data disaply from Third Party System"/>
+
+    <lightning:card>
+        <aura:set attribute="title">
+            <lightning:icon iconName="utility:connected_apps" size="small"/>
+            {! v.title }
+        </aura:set>
+        <aura:set attribute="footer">
+            <lightning:badge label="Tag1"/>
+            <lightning:badge label="Tag2"/>
+            <lightning:badge label="Tag3"/>
+        </aura:set>
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+        <thead>
+            <tr class="slds-text-title--caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Id">ID</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Name">Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Email">Year</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Gender">Color</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Status">Parton Value</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.response}" var="con">
+                <tr>
+                    <th scope="row">
+                        <div class="slds-truncate" title="{!con.id}">{!con.id}</div>
+                    </th>
+                    <th scope="row">
+                        <div class="slds-truncate" title="{!con.name}">{!con.name}</div>
+                    </th>
+                    <th scope="row">
+                        <div class="slds-truncate" title="{!con.year}">{!con.year}</div>
+                    </th>
+                    <th scope="row">
+                        <div class="slds-truncate" title="{!con.color}">{!con.color}</div>
+                    </th>
+                    <th scope="row">
+                        <div class="slds-truncate" title="{!con.pantone_value}">{!con.pantone_value}</div>
+                    </th>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    </lightning:card>
+    
+    
+    
+</aura:component>

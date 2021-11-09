@@ -1,0 +1,15 @@
+<aura:component controller="InsertAccount">
+    
+    <aura:attribute type="Account[]" name="acctList"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    
+    
+    <aura:attribute name="firstName" type="String"/>
+    <div class="row">
+        <h2 class="header">Account Name</h2>
+        <lightning:input name="accName" value="{! v.firstName }" placeholder="type your Account Name" />
+    </div> 
+    
+    <lightning:button variant="brand" class="slds-align_absolute-center slds-m-top_large" label="Save" onclick="{! c.saveRecord }" />
+    
+</aura:component>

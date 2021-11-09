@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Account List From Apex" icon-name="custom:custom63">
+            <!-- <div class="slds-m-around_medium">
+                <template if:true={accounts.data}>
+                    <template for:each={accounts.data} for:item="acc">
+                        <p key={acc.Id}>{acc.Name}</p>
+                    </template>
+                </template>
+                <template if:true={accounts.error}>
+                    {accounts.error}
+                </template>
+            </div> -->
+
+            <h2> Account Datatable</h2>
+            <template if:true={accList}>
+                <lightning-datatable data={accList} columns={columns} key-field="Id">
+                </lightning-datatable>
+            </template>
+            <template if:true={error}>
+                {error}
+            </template>
+            
+    </lightning-card>
+</template>

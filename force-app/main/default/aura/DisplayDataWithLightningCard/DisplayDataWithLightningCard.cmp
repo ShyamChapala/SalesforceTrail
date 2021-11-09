@@ -1,0 +1,25 @@
+<aura:component controller="AccountListController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="accountList" type="Object" />
+    <aura:attribute name="mycolumns" type="List" />
+    
+    
+    <lightning:card>
+        <aura:set attribute="title">
+            <lightning:icon iconName="utility:connected_apps" size="small"/>
+        </aura:set>
+        <aura:set attribute="footer">
+            <lightning:badge label="Tag1"/>
+            <lightning:badge label="Tag2"/>
+            <lightning:badge label="Tag3"/>
+        </aura:set>
+        <lightning:datatable
+                             keyField="id"
+                             columns="{!v.mycolumns }"
+                             data="{!v.accountList}"
+                             hideCheckBoxColumn="true"
+                             >
+        </lightning:datatable>
+    </lightning:card>
+</aura:component>
